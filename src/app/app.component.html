@@ -1,9 +1,19 @@
-<md-toolbar color="primary">
-  <span>
-      <md-icon class="icon-20">pets</md-icon>
-      Angular Material2
-    </span>    
-  
-  <button md-icon-button><md-icon>more_vert</md-icon></button>
-</md-toolbar>
-
+<md-sidenav-layout>
+  <md-sidenav #sideNav>
+    <md-nav-list>
+      <a href="#home" [routerLink]="['/home']" class="list-group-item list-group-item-action">Home</a>
+      <a href="#button" [routerLink]="['/button']" class="list-group-item list-group-item-action">Button</a>
+    </md-nav-list>
+    <br/><br/>     
+  </md-sidenav>
+  <div class="content-wrapper">
+    <md-toolbar color="primary">
+      <span>
+      <md-icon class="icon-20" (click)="sideNav.open()">view_headline</md-icon>
+      Angular Material 2
+    </span>
+      <!--<button md-icon-button><md-icon>more_vert</md-icon></button>-->
+    </md-toolbar>
+    <router-outlet></router-outlet>
+  </div>  
+</md-sidenav-layout>
